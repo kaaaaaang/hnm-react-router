@@ -111,9 +111,9 @@ body{
 }
 
 @media screen and (max-width: 63rem) {
-  .hide {
+  /* .hide {
     visibility:visible;
-  }
+  } */
   .menu {
     display: none;
   }
