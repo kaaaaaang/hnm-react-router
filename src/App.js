@@ -20,10 +20,6 @@ import PrivateRoute from './route/PrivateRoute';
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
 
-  useEffect(()=>{
-    console.log("authenticate",authenticate);
-  }, [authenticate]);
-
   return (
     <div>
       <NavBar authenticate={authenticate} setAuthenticate={setAuthenticate} />

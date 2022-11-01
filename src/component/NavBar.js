@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = ({authenticate, setAuthenticate}) => {
     const menuList = [
@@ -18,7 +18,7 @@ const NavBar = ({authenticate, setAuthenticate}) => {
     let [sideMenuHide, setSideMenuHide] = useState(true);
     let navigate = useNavigate();
 
-    const goToLogin =()=>{
+    const goToLogin = () => {
         navigate('/login');
     };
 
@@ -52,7 +52,7 @@ const NavBar = ({authenticate, setAuthenticate}) => {
                   <span>로그아웃</span>
                 </div>
               ) : (
-                <div className='login-button' onClick={()=>goToLogin()}>
+                <div className='login-button' onClick={() => navigate("/login")}>
                   <FontAwesomeIcon icon={faUser} />
                   <span>로그인</span>
                 </div>
@@ -61,10 +61,12 @@ const NavBar = ({authenticate, setAuthenticate}) => {
         </div>
   
         <div className="nav-logo">
-            <img
-              width={100}
-              src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg"
-            />
+            <Link to="/">
+              <img
+                width={100}
+                src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg"
+                />
+            </Link>
         </div>
         <div className="nav-menu-area">
           <ul className="menu">
